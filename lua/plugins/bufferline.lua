@@ -11,10 +11,13 @@ require("bufferline").setup {
             highlight = "Directory",
             text_align = "left"
         }},
+        --mode = "tabs",
+        numbers = "ordinal",
         close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actionIs"
         right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
         left_mouse_command = "buffer %d",    -- can be a string | function, see "Mouse actions"
         middle_mouse_command = nil,          -- can be a string | function, see "Mouse actions"
+
         color_icons = true, -- whether or not to add the filetype icon highlights
         show_buffer_icons = true, -- disable filetype icons for buffers
         show_buffer_close_icons = true,

@@ -65,11 +65,15 @@ return require('packer').startup(function(use)
   use "lewis6991/gitsigns.nvim" -- 左则git提示
 
   use "simrat39/symbols-outline.nvim"   -- 符号大纲
-  
+ 
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.1',  -- 文件检索
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+
+  -- cmake 插件
+  use "nvim-lua/plenary.nvim"
+  use "mfussenegger/nvim-dap"   -- for debug
 
   if packer_bootstrap then
     require('packer').sync()
