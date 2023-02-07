@@ -16,6 +16,7 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 keymap.set("n", "<leader>sv", "<C-w>v") -- 水平新增窗口 
 keymap.set("n", "<leader>sh", "<C-w>s") -- 垂直新增窗口
 keymap.set("n", "<leader>wq", "<C-w>q") -- 关闭窗口
+
 -- 行头行尾
 keymap.set("n", "<leader>w", "^"); -- 行头
 keymap.set("n", "<leader>e", "$"); -- 行尾
@@ -28,10 +29,12 @@ keymap.set("n", "<leader>e", "$"); -- 行尾
 --keymap.set("n", "<C-H>", ":bprevious<CR>")
 
 -- bufferline 左右Tab切换
-keymap.set("n", "<tab>", ":BufferLineCyclePrev<CR>")
-keymap.set("n", "<s-tab>", ":BufferLineCycleNext<CR>")
+keymap.set("n", "<s-tab>", ":BufferLineCyclePrev<CR>")
+keymap.set("n", "<tab>", ":BufferLineCycleNext<CR>")
 
 -- ---------- 插件 ---------- ---
 -- nvim-tree
 keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>")
+
+-- symbole outline
 keymap.set("n", "<leader>s", ":SymbolsOutline<CR>")
