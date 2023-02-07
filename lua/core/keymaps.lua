@@ -17,13 +17,17 @@ keymap.set("n", "<leader>sv", "<C-w>v") -- 水平新增窗口
 keymap.set("n", "<leader>sh", "<C-w>s") -- 垂直新增窗口
 
 -- 取消高亮
-keymap.set("n", "<leader>h", ":nohl<CR>")
+--keymap.set("n", "<leader>h", ":nohl<CR>")
 
 -- 切换buffer
-keymap.set("n", "<C-L>", ":bnext<CR>")
-keymap.set("n", "<C-H>", ":bprevious<CR>")
+keymap.set("n", "<leader>l", ":bnext<CR>")
+keymap.set("n", "<leader>h", ":bprevious<CR>")
+
+-- bufferline 左右Tab切换
+keymap.set("n", "<C-H>", ":BufferLineCyclePrev<CR>")
+keymap.set("n", "<C-L>", ":BufferLineCycleNext<CR>")
 
 -- ---------- 插件 ---------- ---
 -- nvim-tree
-keymap.set("n", "<leader>r", ":NvimTreeToggle<CR>")
+keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>")
 keymap.set("n", "<leader>s", ":SymbolsOutline<CR>")

@@ -63,13 +63,14 @@ cmp.setup({
 
   -- 这里重要
   sources = cmp.config.sources(
-   {{ name = 'nvim_lsp' },
-    { name = 'luasnip'  },
-    { name = 'path' }   }, 
-   {{ name = 'buffer' }},
-   {{ name = 'cmdline',
-      name = 'nvim_lsp_signature_help',
-    }})
+   {{ name = 'nvim_lsp'},
+    { name = 'nvim_lsp_document_symbol'},
+    { name = 'luasnip'},
+    { name = 'path'},
+    { name = 'buffer'},
+    { name = 'cmdline'},
+    { name = 'nvim_lsp_signature_help'},
+    })
 })
 
 -- `/` cmdline setup.
