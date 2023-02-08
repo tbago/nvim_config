@@ -74,6 +74,13 @@ return require('packer').startup(function(use)
   -- cmake 插件
   use "nvim-lua/plenary.nvim"
   use "mfussenegger/nvim-dap"   -- for debug
+  use 'Civitasv/cmake-tools.nvim'
+
+  -- Debugger
+  use "ravenxrz/DAPInstall.nvim"
+  use "ravenxrz/nvim-dap"
+  use "theHamsta/nvim-dap-virtual-text"
+  use "rcarriga/nvim-dap-ui"
 
   if packer_bootstrap then
     require('packer').sync()

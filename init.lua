@@ -16,3 +16,6 @@ require("plugins.bufferline")
 require("plugins.gitsigns")
 require("plugins.telescope")
 require("plugins.symbols-outline")
+require("plugins.cmake")
+
+-- dap相关功能
