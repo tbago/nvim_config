@@ -11,20 +11,34 @@ require("mason").setup({
 require("mason-lspconfig").setup({
   -- 确保安装，根据需要填写
   ensure_installed = {
-    "sumneko_lua",
+    "lua_ls",
     "clangd",
+    "cmake",
+    "gopls",
   },
 })
 
+-- nvim-cmp supports additional completion capabilities
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require("lspconfig").sumneko_lua.setup {
-  capabilities = capabilities,
-}
+---- lspconfig
+local status_ok, lspconfig = pcall(require, "lspconfig")
 
-require("lspconfig").clangd.setup {
-  capabilities = capabilities,
-}
+if not status_ok then
+    vim.notify("lspconfig don't exists")
+    return
+end
+
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+Servers = {'lua_ls', 'clangd', 'cmake', "gopls"}
+for _, lsp in ipairs(Servers) do
+    lspconfig[lsp].setup {
+        flags = {
+        },
+        capabilities = capabilities
+    }
+end
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions

@@ -18,8 +18,8 @@ keymap.set("n", "<leader>sh", "<C-w>s") -- 垂直新增窗口
 keymap.set("n", "<leader>wq", "<C-w>q") -- 关闭窗口
 
 -- 行头行尾
-keymap.set("n", "<leader>w", "^"); -- 行头
-keymap.set("n", "<leader>e", "$"); -- 行尾
+keymap.set("n", "<D-Left>", "^"); -- 行头
+keymap.set("n", "<D-Right>", "$"); -- 行尾
 
 -- 取消高亮
 --keymap.set("n", "<leader>h", ":nohl<CR>")
