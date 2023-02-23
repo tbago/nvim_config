@@ -18,18 +18,18 @@ keymap.set("n", "<leader>sh", "<C-w>s") -- 垂直新增窗口
 keymap.set("n", "<leader>wq", "<C-w>q") -- 关闭窗口
 
 -- 行头行尾
-keymap.set("n", "<D-Left>", "^"); -- 行头
-keymap.set("n", "<D-Right>", "$"); -- 行尾
+keymap.set("n", "he", "^"); -- 行头
+keymap.set("n", "le", "$"); -- 行尾
 
 -- 取消高亮
---keymap.set("n", "<leader>h", ":nohl<CR>")
+keymap.set("n", "<leader>h", ":nohl<CR>")
 
 -- 切换buffer
---keymap.set("n", "<C-L>", ":bnext<CR>")
---keymap.set("n", "<C-H>", ":bprevious<CR>")
+-- keymap.set("n", "<C-l>", ":bnext<CR>")
+-- keymap.set("n", "<C-h>", ":bprevious<CR>")
 
 -- bufferline 左右Tab切换
-keymap.set("n", "<s-tab>", ":BufferLineCyclePrev<CR>")
+keymap.set("n", "<S-tab>", ":BufferLineCyclePrev<CR>")
 keymap.set("n", "<tab>", ":BufferLineCycleNext<CR>")
 
 -- ---------- 插件 ---------- ---
