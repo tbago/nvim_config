@@ -17,5 +17,6 @@ require("plugins.gitsigns")
 require("plugins.telescope")
 require("plugins.symbols-outline")
 require("plugins.cmake")
+require("plugins.toggleterm")
 
 -- dap相关功能
