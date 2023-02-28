@@ -2,6 +2,7 @@
 -- 用户自定义选项
 require("core.options")
 require("core.keymaps")
+require("core.format")
 
 -- 插件安装
 require("plugins.plugins-setup")

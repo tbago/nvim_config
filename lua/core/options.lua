@@ -1,5 +1,9 @@
 local opt = vim.opt
 
+-- 禁用备份文件
+opt.backup = false
+opt.swapfile = false
+
 -- 行号
 opt.relativenumber = true
 opt.number = true
