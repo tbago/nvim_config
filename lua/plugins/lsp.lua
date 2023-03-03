@@ -15,6 +15,7 @@ require("mason-lspconfig").setup({
     "clangd",
     "cmake",
     "gopls",
+    "pyright",
   },
 })
 
@@ -74,6 +75,10 @@ lspconfig["gopls"].setup {
     capabilities = capabilities,
 }
 
+lspconfig["pyright"].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }

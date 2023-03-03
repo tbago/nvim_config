@@ -11,7 +11,6 @@ end
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
--- 下面会用到这个函数
 local check_backspace = function()
   local col = vim.fn.col "." - 1
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
@@ -64,15 +63,17 @@ cmp.setup({
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
       ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
-              cmp.select_next_item()
+            cmp.select_next_item()
+          elseif luasnip.expandable() then
+            luasnip.expand()
           elseif luasnip.expand_or_jumpable() then
-              luasnip.expand_or_jump()
-          elseif has_words_before() then
-              cmp.complete()
+            luasnip.expand_or_jump()
+          elseif check_backspace() then
+            fallback()
           else
-              fallback()
+            fallback()
           end
-      end, { "i", "s" }),
+      end, {"i","s",}),
 
       ["<S-Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
@@ -92,9 +93,9 @@ cmp.setup({
     { name = 'luasnip'},
     { name = 'path'},
     { name = 'buffer'},
-    { name = 'cmdline'},
+    -- { name = 'cmdline'},    启用这个换行后空行也会显示cmp
     { name = 'nvim_lsp_signature_help'},
-    }),
+   }),
 
   formatting = {
     format = function(entry, vim_item)
@@ -122,7 +123,7 @@ cmp.setup({
       cmp.config.compare.length,
       cmp.config.compare.order,
     },
-},
+  },
 })
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
